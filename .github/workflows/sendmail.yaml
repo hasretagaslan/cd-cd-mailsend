@@ -11,14 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Send Notification Email
-        uses: mohammadmohsen/action-send-mail@v1
+      - name: Send Email
+        uses: hilarion5/send-mail@v1
         with:
-          smtp_server: smtp.gmail.com
-          smtp_port: 587
-          smtp_username: ${{ secrets.SMTP_USERNAME }}
-          smtp_password: ${{ secrets.SMTP_PASSWORD }}
-          to: recipient@example.com
-          from: ${{ secrets.SMTP_USERNAME }}
-          subject: "GitHub Action Started"
-          body: "The GitHub Action has started for branch "
+          smtp-server: smtp.example.com
+          smtp-port: 465
+          smtp-secure: true
+          from-email: hasretagaslan@gmail.com
+          username: Hasret Ağaslan
+          password: Hasse1998.
+          subject: Test Email
+          body: This is a test email sent from GitHub Actions.
+         
