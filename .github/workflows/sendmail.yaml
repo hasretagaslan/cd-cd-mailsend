@@ -22,4 +22,4 @@ jobs:
           password: ${{ secrets.SMTP_PASSWORD }}
           subject: Test Email
           body: This is a test email sent from GitHub Actions.
-         
+        
