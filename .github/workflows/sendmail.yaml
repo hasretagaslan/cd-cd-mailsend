@@ -9,6 +9,8 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+
       - name: Send Notification Email
         uses: mohammadmohsen/action-send-mail@v1
         with:
