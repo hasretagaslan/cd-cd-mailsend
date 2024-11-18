@@ -19,4 +19,4 @@ jobs:
           to: recipient@example.com
           from: ${{ secrets.SMTP_USERNAME }}
           subject: "GitHub Action Started"
-          body: "The GitHub Action has started for branch ${GITHUB_REF}."
+          body: "The GitHub Action has started for branch "
