@@ -18,8 +18,8 @@ jobs:
           smtp-port: 465
           smtp-secure: true
           from-email: hasretagaslan@gmail.com
-          username: Hasret Ağaslan
-          password: Hasse1998.
+          username: hasretagaslan@gmail.com
+          password: ${{ secrets.SMTP_PASSWORD }}
           subject: Test Email
           body: This is a test email sent from GitHub Actions.
          
