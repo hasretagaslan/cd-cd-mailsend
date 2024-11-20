@@ -3,7 +3,7 @@ name: Update Version
 on:
   push:
     branches:
-      - beta
+      - main
 
 jobs:
   building_image:
