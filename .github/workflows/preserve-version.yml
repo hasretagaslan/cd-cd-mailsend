@@ -1,22 +1,21 @@
-name: Preserve version.txt on merge
+name: Protect version.txt
 
 on:
   pull_request:
     branches:
-      - main
+      - beta 
 
 jobs:
-  preserve-file:
+  check-version:
     runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repository
-        uses: actions/checkout@v3
 
-      - name: Restore version.txt from beta branch
-        run: |
-          git checkout beta version.txt
-          git add version.txt
-          git commit -m "Restore version.txt from beta" || echo "No changes to commit"
-      - name: Push changes
-        run: |
-          git push origin beta
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Verify version.txt
+      run: |
+        if [[ "$(git diff --name-only origin/beta)" == *"version.txt"* ]]; then
+          echo "Error: version.txt is modified in this PR!" >&2
+          exit 1
+        fi
