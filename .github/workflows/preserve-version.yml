@@ -3,7 +3,7 @@ name: Preserve version.txt on merge
 on:
   pull_request:
     branches:
-      - beta
+      - main
 
 jobs:
   preserve-file:
