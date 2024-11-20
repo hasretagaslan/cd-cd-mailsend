@@ -1,0 +1,22 @@
+name: Preserve version.txt on merge
+
+on:
+  pull_request:
+    branches:
+      - beta
+
+jobs:
+  preserve-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Restore version.txt from beta branch
+        run: |
+          git checkout beta version.txt
+          git add version.txt
+          git commit -m "Restore version.txt from beta" || echo "No changes to commit"
+      - name: Push changes
+        run: |
+          git push origin beta

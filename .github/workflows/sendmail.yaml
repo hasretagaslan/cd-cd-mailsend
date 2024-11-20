@@ -28,7 +28,7 @@ jobs:
         run: echo ::set-output name=version::$(cat version.txt)
         id: get-version
         
-      - name: Commit Changes
+      - name: Commit Changes test
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
