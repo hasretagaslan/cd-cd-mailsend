@@ -28,7 +28,7 @@ jobs:
       - name: Determine Version
         if: ${{ github.ref_name == 'beta' }}
         run: echo ::set-output name=version::$(cat version.txt)
-        id: get-version
+        id: get-version1
         
       - name: Determine Version
         if: ${{ github.ref_name == 'main' }}
