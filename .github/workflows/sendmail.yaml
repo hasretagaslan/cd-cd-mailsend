@@ -34,5 +34,4 @@ jobs:
         if: ${{ github.ref_name == 'main' }}
         run: echo ::set-output name=version::$(cat version.txt)
         id: get-version
-    
-    
+  
